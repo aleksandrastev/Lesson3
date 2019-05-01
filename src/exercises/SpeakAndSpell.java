@@ -1,32 +1,68 @@
 package exercises;
 
-import voce.SpeechSynthesizer;
+import javax.swing.JOptionPane;
 
-/**
- * The first Speak & Spell was introduced at the summer Consumer Electronics
- * Show in June 1978, making it one of the earliest hand-held electronic devices
- * with a visual display to use interchangeable game cartridges. 
- * It was my favorite game as a kid.
- * 
- * https://www.youtube.com/watch?v=qM8FcN0aAvU
- **/
+import voce.SpeechSynthesizer;
 
 public class SpeakAndSpell {
 
 	public static void main(String[] args) {
-		// 1. Use the speak method to say the word. "e.g. spell mandlebrot"
+		JOptionPane.showMessageDialog(null, "Press the OK button and wait to hear the word.");
+		int score = 0;
+		String word = "mandlebrot";
+		speak(word);
+		String answer = JOptionPane.showInputDialog("Spell the word:");
+		if (answer.equals(word)) {
+			speak("correct");
+			score += 2;
+		} else {
+			speak("wrong");
+			score -= 1;
+		}
+		JOptionPane.showMessageDialog(null, "Press the OK button for next word.");
+		word = "curriculum";
+		speak(word);
+		answer = JOptionPane.showInputDialog("Spell the word:");
+		if (answer.equals(word)) {
+			speak("correct");
+			score += 2;
+		} else {
+			speak("wrong");
+			score -= 1;
+		}
+		JOptionPane.showMessageDialog(null, "Press the OK button for next word.");
+		word = "requirement";
+		speak(word);
+		answer = JOptionPane.showInputDialog("Spell the word:");
+		if (answer.equals(word)) {
+			speak("correct");
+			score += 2;
+		} else {
+			speak("wrong");
+			score -= 1;
+		}
+		JOptionPane.showMessageDialog(null, "Press the OK button for next word.");
+		word = "examination";
+		speak(word);
+		answer = JOptionPane.showInputDialog("Spell the word:");
+		if (answer.equals(word)) {
+			speak("correct");
+			score += 2;
+		} else {
+			speak("wrong");
+			score -= 1;
+		}
+		JOptionPane.showMessageDialog(null, "Your score is " + score);
+		if (score >= 7) {
+			speak("you are pro");
+		} else if (score >= 5) {
+			speak("great job");
+		} else if (score >= 3) {
+			speak("good so far");
+		} else {
+			speak("best of luck next time");
+		}
 
-		// 2. Catch the user's answer in a String
-
-		// 3. If the user spelled the word correctly, speak "correct"
-
-		// 4. Otherwise say "wrong"
-
-		// 5. Repeat the process for other words
-		
-		// 6. Calculate the user's score and give it to them at the end of the game 
-		
-		
 	}
 
 	static void speak(String words) {
