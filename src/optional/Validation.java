@@ -2,20 +2,37 @@ package optional;
 
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 public class Validation {
 	public static void main(String[] args) {
 
-		// 1. Watch the first 2 minutes of this movie: http://vimeo.com/2485018
-		int randomNumber = new Random().nextInt(5);
-		// 2. On paper, write all the numbers that get printed when you run this class
-		System.out.println(randomNumber);
+		for (int i = 0; i < 10; i++) {
 
-		// 3. Use the randomNumber to give the user a random compliment.
+			int randomNumber = new Random().nextInt(5);
 
-		// 4. Repeat all the code above 10 times
-		
-		// 5. Find someone to test out your program. They will like it :)
+			System.out.println(randomNumber);
+
+			if (randomNumber == 0) {
+				JOptionPane.showMessageDialog(null,
+						"You are blessed. You are great. You are not alone. You are powerful.");
+			}
+			if (randomNumber == 1) {
+				JOptionPane.showMessageDialog(null, "Watching you is like listening to angels sing!");
+			}
+			if (randomNumber == 2) {
+				JOptionPane.showMessageDialog(null,
+						"You are amazing person with unique talents. Have faith in your abilities.");
+			}
+			if (randomNumber == 3) {
+				JOptionPane.showMessageDialog(null,
+						"If God wanted the universe to be imperfect, He would not have created you.");
+			}
+			if (randomNumber == 4) {
+				JOptionPane.showMessageDialog(null,
+						"You are special individual. \nNobody can be you. \nYou can rise to a greater heights.");
+			}
+		}
+
 	}
 }
-
-
